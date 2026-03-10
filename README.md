@@ -16,7 +16,7 @@ Today I learned:
 
 ---
 
-## Day 1 – Photo Organizer
+### Day 1 – Photo Organizer
 
 - Removed duplicate photos using jdupes
 - Organized 5000+ iPhone photos and videos by date using ExifTool
