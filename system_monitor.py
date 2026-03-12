@@ -1,46 +1,45 @@
 import psutil
 import time
-import sys
+import os
 
-prev_cpu = None
-prev_ram = None
 
-def trend(curr, prev):
-    if prev is None:
-        return " "
-    if curr > prev:
-        return "↑"
-    if curr < prev:
-        return "↓"
-    return "→"
+def bar(percent, length=30):
+    filled = int(length * percent / 100)
+    return "█" * filled + "-" * (length - filled)
+
+
+def gb(value):
+    return round(value / (1024**3), 2)
+
 
 while True:
     cpu = psutil.cpu_percent(interval=1)
     mem = psutil.virtual_memory()
     disk = psutil.disk_usage('/')
+    net = psutil.net_io_counters()
 
-    ram = mem.percent
+    os.system("clear")
 
-    cpu_tr = trend(cpu, prev_cpu)
-    ram_tr = trend(ram, prev_ram)
+    print("=========== SYSTEM MONITOR ===========\n")
 
-    prev_cpu = cpu
-    prev_ram = ram
+    print("CPU")
+    print(f"[{bar(cpu)}] {cpu}%")
 
-    # Move cursor to top instead of clearing screen
-    sys.stdout.write("\033[H")
-    sys.stdout.flush()
+    print("\nRAM")
+    print(f"[{bar(mem.percent)}] {mem.percent}%")
+    print(f"{gb(mem.used)} GB / {gb(mem.total)} GB")
 
-    print("=== System Monitor ===\n")
+    print("\nDISK")
+    print(f"[{bar(disk.percent)}] {disk.percent}%")
+    print(f"{gb(disk.used)} GB / {gb(disk.total)} GB")
 
-    print(f"CPU Usage: {cpu}% {cpu_tr}")
-    print(f"RAM Usage: {ram}% {ram_tr}")
+    print("\nNETWORK")
+    print(f"Sent: {round(net.bytes_sent / (1024**2), 2)} MB")
+    print(f"Recv: {round(net.bytes_recv / (1024**2), 2)} MB")
 
-    print(f"\nDisk Usage: {disk.percent}%")
-    print(f"Disk Used: {disk.used // (1024**3)} GB / {disk.total // (1024**3)} GB")
+    uptime = int((time.time() - psutil.boot_time()) / 3600)
+    print(f"\nUPTIME: {uptime} hours")
 
-    uptime = time.time() - psutil.boot_time()
-    hours = int(uptime // 3600)
-    print(f"\nSystem Uptime: {hours} hours")
+    print("\n======================================")
 
     time.sleep(2)
