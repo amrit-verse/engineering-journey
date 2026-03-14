@@ -1,76 +1,112 @@
-# Engineering Journey
+# Engineering Journey 🚀
 
-This repository documents my journey to becoming a great engineer.
+This repository documents my journey toward becoming a skilled engineer through daily hands-on projects, problem solving, and system exploration.
+
+Each day focuses on building something practical while learning new tools and concepts.
 
 ---
 
-## Day 0
+## Day 0 – Environment Setup
 
-Today I learned:
+Today I set up the core development environment.
 
-- Setting up Git
-- Connecting Git with GitHub using SSH
-- Writing my first Python program
-- Debugging and fixing a Linux WiFi driver issue
-- Creating my first Git commit
+### What I learned
 
-## Day 1 – Photo Organizer
+* Setting up **Git**
+* Connecting **Git with GitHub using SSH**
+* Writing my **first Python program**
+* Debugging and fixing a **Linux WiFi driver issue**
+* Creating my **first Git commit**
 
-- Removed duplicate photos using jdupes
-- Organized 5000+ iPhone photos and videos by date using Exif Tool
-- Built a Python script to automatically organize photos using EXIF metadata
+### Key Takeaway
 
-## Day 2 – System Monitor CLI Tool
+Understanding development tools and solving system-level issues is an essential part of engineering.
 
-Today I built a simple system monitoring tool using Python.
+---
 
-Features implemented:
+## Day 1 – Photo Organizer 📷
 
-- Monitor CPU usage
-- Monitor RAM usage
-- Monitor disk usage
-- Display system uptime
-- Show CPU temperature
-- Display network statistics
-- List top processes using CPU
-- Added arrows (↑ ↓ →) to indicate increasing or decreasing resource usage
-- Reduced terminal flickering by updating values instead of clearing the screen
+Today I organized a large photo collection and automated the process.
 
-Tools and technologies used:
+### Tasks Completed
 
-- Python
-- psutil library
-- Linux system metrics
+* Removed duplicate photos using **jdupes**
+* Organized **5000+ iPhone photos and videos** by date using **ExifTool**
+* Built a **Python script** to automatically organize photos using **EXIF metadata**
 
-Goal: Learn how system information can be collected programmatically from the operating system.
+### What I Learned
 
-## Day 3 – Disk Usage Analyzer
+* Working with **metadata**
+* Automating repetitive tasks
+* Using command-line tools with Python
 
-### Overview
-Today I built a Python CLI tool that analyzes disk usage and identifies the largest directories inside a given path.
+---
 
-This is useful for understanding where storage space is being consumed on a Linux system.
+## Day 2 – System Monitor CLI Tool 💻
 
-### Technologies
-- Python
-- os module
-- argparse
+Today I built a **command-line system monitoring tool** using Python.
 
 ### Features
-- Recursively calculates folder sizes
-- Displays top directories by size
-- Human-readable output (KB, MB, GB)
+
+* Monitor **CPU usage**
+* Monitor **RAM usage**
+* Monitor **disk usage**
+* Display **system uptime**
+* Show **CPU temperature**
+* Display **network statistics**
+* List **top processes by CPU usage**
+
+### Improvements
+
+* Added arrows **(↑ ↓ →)** to indicate resource usage trends
+* Reduced terminal flickering by updating values instead of clearing the screen
+
+### Technologies Used
+
+* Python
+* `psutil` library
+* Linux system metrics
+
+### Goal
+
+Learn how system information can be collected programmatically from the operating system.
+
+---
+
+## Day 3 – Disk Usage Analyzer 📊
+
+### Overview
+
+Today I built a **Python CLI tool** that analyzes disk usage and identifies the largest directories inside a given path.
+
+This helps understand where storage space is being consumed on a Linux system.
+
+### Technologies
+
+* Python
+* `os` module
+* `argparse`
+
+### Features
+
+* Recursively calculates **folder sizes**
+* Displays **top directories by size**
+* Outputs sizes in **human-readable format (KB, MB, GB)**
 
 ### Example Usage
 
+```bash
 python3 disk_analyzer.py /home/amrit
+```
 
 ### Example Output
 
+```
 Scanning: /home/amrit
 
 Top directories by size
 
-1. 2.4 GB   Downloads
-2. 1.8 GB   .cache
-3. 950 MB   Videos
+2.4 GB  Downloads
+1.8 GB  .cache
+950 MB  Videos
+```
