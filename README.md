@@ -43,3 +43,34 @@ Tools and technologies used:
 - Linux system metrics
 
 Goal: Learn how system information can be collected programmatically from the operating system.
+
+## Day 3 – Disk Usage Analyzer
+
+### Overview
+Today I built a Python CLI tool that analyzes disk usage and identifies the largest directories inside a given path.
+
+This is useful for understanding where storage space is being consumed on a Linux system.
+
+### Technologies
+- Python
+- os module
+- argparse
+
+### Features
+- Recursively calculates folder sizes
+- Displays top directories by size
+- Human-readable output (KB, MB, GB)
+
+### Example Usage
+
+python3 disk_analyzer.py /home/amrit
+
+### Example Output
+
+Scanning: /home/amrit
+
+Top directories by size
+
+1. 2.4 GB   Downloads
+2. 1.8 GB   .cache
+3. 950 MB   Videos
